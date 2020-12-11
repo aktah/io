@@ -1,0 +1,5 @@
+{
+	"user": "aktah",
+	"repo": "io",
+	"dependencies": ["katursis/Pawn.RakNet"]
+}

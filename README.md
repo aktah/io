@@ -1,16 +1,18 @@
 # io
 
+[![sampctl](https://img.shields.io/badge/sampctl-io-2f2f2f.svg?style=for-the-badge)](https://github.com/aktah/io)
+
 ## วิธีติดตั้ง
 
-ถ้าหากคุณใช้ sampctl
+ถ้าหากคุณใช้ sampctl:
 
-```pawn
+```bash
 sampctl package install aktah/io
 ```
 
-## ลำดับการวาง Include
+ลำดับการวาง Include:
 
-จำเป็นต้องมี [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet)
+- จำเป็นต้องมี [Pawn.RakNet](https://github.com/katursis/Pawn.RakNet)
 
 ```pawn
 #include <Pawn.RakNet>
