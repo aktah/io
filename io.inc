@@ -20,7 +20,7 @@
 #endif
 
 #if !defined OnClientCheckResponse
-    forward OnClientCheckResponse(playerid, type, arg, response);
+    forward OnClientCheckResponse(playerid, actionid, memaddr, retndata);
 #endif
 
 static playerNotAndroid[MAX_PLAYERS char];
@@ -57,12 +57,12 @@ stock isPlayerAndroid(playerId) { return playerNotAndroid{playerId}; }
 
 
 #if defined _inc_y_hooks || defined _INC_y_hooks
-	hook OnClientCheckResponse(playerid, type, arg, response)
+	hook OnClientCheckResponse(playerid, actionid, memaddr, retndata)
 #else
-	public OnClientCheckResponse(playerid, type, arg, response)
+	public OnClientCheckResponse(playerid, actionid, memaddr, retndata)
 #endif
 	{
-		switch(type)
+		switch(actionid)
 		{       
 			case 0x48:
 			{
@@ -71,7 +71,7 @@ stock isPlayerAndroid(playerId) { return playerNotAndroid{playerId}; }
 		}
 
 		#if defined INC_IO_OnClientCheckResponse
-			return INC_IO_OnClientCheckResponse(playerid, type, arg, response);
+			return INC_IO_OnClientCheckResponse(playerid, actionid, memaddr, retndata);
 		#else
 			return 1;
 		#endif
@@ -86,6 +86,6 @@ stock isPlayerAndroid(playerId) { return playerNotAndroid{playerId}; }
 
 	#define OnClientCheckResponse INC_IO_OnClientCheckResponse
 	#if defined INC_IO_OnClientCheckResponse
-		forward INC_IO_OnClientCheckResponse(playerid, type, arg, response);
+		forward INC_IO_OnClientCheckResponse(playerid, actionid, memaddr, retndata);
 	#endif
 #endif
