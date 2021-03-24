@@ -23,9 +23,9 @@
     forward OnClientCheckResponse(playerid, actionid, memaddr, retndata);
 #endif
 
-static playerNotAndroid[MAX_PLAYERS char];
+static bool:playerNotAndroid[MAX_PLAYERS char];
 
-stock isPlayerAndroid(playerId) { return !playerNotAndroid{playerId}; }
+stock bool:isPlayerAndroid(playerId) { return playerNotAndroid{playerId} == false; }
 
 #if defined _inc_y_hooks || defined _INC_y_hooks
 	hook OnPlayerConnect@999(playerid)
