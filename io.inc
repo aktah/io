@@ -25,7 +25,7 @@
 
 static playerNotAndroid[MAX_PLAYERS char];
 
-stock isPlayerAndroid(playerId) { return playerNotAndroid{playerId}; }
+stock isPlayerAndroid(playerId) { return !playerNotAndroid{playerId}; }
 
 #if defined _inc_y_hooks || defined _INC_y_hooks
 	hook OnPlayerConnect@999(playerid)
